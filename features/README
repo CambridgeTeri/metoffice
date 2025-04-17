@@ -1,0 +1,76 @@
+# Met Office Website Test Automation
+
+This project contains automated tests for the Met Office website (https://www.metoffice.gov.uk/) using Python with Playwright and Behave for BDD-style testing.
+
+## Project Structure
+
+```
+project_structure/
+├── features/
+│   ├── environment.py                # Test setup and teardown
+│   ├── metoffice_forecast.feature    # BDD scenarios
+│   └── steps/
+│       └── metoffice_steps.py        # Step definitions
+├── pages/
+│   ├── base_page.py                  # Base page object with common methods
+│   ├── home_page.py                  # Home page specific methods
+│   ├── forecast_page.py              # Weather forecast page methods
+│   ├── pollen_page.py                # Pollen forecast page methods
+│   └── precipitation_map_page.py     # Precipitation map page methods
+└── requirements.txt                  # Project dependencies
+```
+
+## Prerequisites
+
+- Python 3.8 or higher
+- pip (Python package installer)
+
+## Installation
+
+1. Unzip or Clone this repository
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Setup
+
+1. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+
+
+## Running Tests
+
+To run all tests:
+
+```bash
+behave
+```
+
+To run with more detailed output:
+
+```bash
+behave -v
+```
+
+To generate a report:
+
+```bash
+behave -f html -o report.html
+```
+
+## Key Features
+
+- **Page Object Model**: Clean separation of test logic from UI interaction
+- **Playwright**: Modern browser automation with better auto-waiting mechanisms
+- **BDD**: Tests written in natural language with Gherkin syntax
+- **Cross-Browser support**: Tests can run on Chromium, Firefox, or WebKit
+
+## Possible Issues and Solutions
+
+1. **Element Selectors**: If the website changes, update selectors in the page objects
+2. **Timeouts**: Adjust timeouts in BasePage if site response is slow
+3. **Cookie Handling**: May need updates if cookie consent dialog changes
