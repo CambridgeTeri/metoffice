@@ -5,8 +5,6 @@ import time as time_module
 
 @given("I am on the Met Office homepage")
 def step_impl(context):
-    # The page objects are already created in environment.py
-    # Just use them directly
     context.home_page.navigate("https://www.metoffice.gov.uk")
     context.home_page.handle_cookies()
 
@@ -70,7 +68,7 @@ def step_impl(context, region):
 @when("I view the precipitation map")
 def step_impl(context):
     # Navigate to the Maps & charts section and select precipitation map
-    # We need to use the home page to get to the Maps & charts section
+    # Need to use the home page to get to the Maps & charts section
     context.home_page.navigate_to_precipitation_map()
 
 @then("I should see the UK precipitation map")
